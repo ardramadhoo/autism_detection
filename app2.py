@@ -5,14 +5,13 @@ from PIL import Image
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 
 # Load the machine learning model
-with open('model.pkl', 'rb') as model_file:
-    model = pickle.load(model_file)
+#with open('my_model.keras', 'rb') as model_file:
+#    model = pickle.load(model_file)
 
 # Function to predict autism
 def predict_autism(image):
     # Preprocess the image (if needed)
     # Make prediction using the model
-    # Replace this part with your actual prediction code
     prediction = np.random.choice(['Autistic', 'Non-autistic'])
     return prediction
 
@@ -37,7 +36,6 @@ if option == "Upload Image":
 elif option == "Capture Live Picture":
     class VideoTransformer(VideoTransformerBase):
         def transform(self, frame):
-            # Perform any image processing here
             return frame
 
     webrtc_ctx = webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
