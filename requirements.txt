@@ -1,4 +1,3 @@
 opencv-python
 streamlit
 tensorflow
---upgrade opencv-python
